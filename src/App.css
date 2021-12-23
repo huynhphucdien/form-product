@@ -1,0 +1,12 @@
+.body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.manage-page {
+  display: flex;
+  width: 95%;
+}
+.manage-form {
+  display: flex;
+}

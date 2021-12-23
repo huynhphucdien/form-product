@@ -1,0 +1,55 @@
+
+
+_Thêm sản phẩm (state, onSubmit) - smarted: giữ dữ liệu của form, bọc th form lại
+    |_Thêm sản phẩm form (validate input data, xử lý logic của form, thực thi hàm submit đc gửi)
+
+
+function CreateUser() {
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+      ......fetch something
+
+    setData(value);
+    setLoading(false)
+  },[])
+
+  const handleSubmit = async (value) => {
+      try{
+          ...send data to servers
+          ... call create api
+      }catch (error) {
+          console.log(error)
+      }
+  }
+
+  return (
+    <div>
+      {
+          !loading && <CreateUserForm userTypes={data} onSubmit={handleSubmit} />
+      }
+    </div>
+  );
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+function CreateUserForm({userTypes, onSubmit}) {
+
+  const handleSubmit = async (value) => {
+      try{
+          if(onSubmit){
+              onSubmit(value)
+          }
+      }catch (error) {
+          console.log(error)
+      }
+  }
+
+  return (
+    <form>
+     ....
+    </form>
+  );
+}
